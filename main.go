@@ -112,8 +112,9 @@ func jsonSuccess(w http.ResponseWriter) {
 }
 
 func main() {
+	log.Println("Path is"+os.Getenv("RAILWAY_VOLUME_MOUNT_PATH"))
 	// Initialise database connection
-	db, err := sql.Open("sqlite", "data/db.sqlite")
+	db, err := sql.Open("sqlite", os.Getenv("RAILWAY_VOLUME_MOUNT_PATH")+"db.sqlite")
 	if err != nil {
 		log.Fatalln(err)
 	}
