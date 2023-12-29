@@ -266,6 +266,5 @@ func main() {
 	if port == "" {
 		port = "3000"
 	}
-	log.Println("Serving HTTP server on :" + port)
 	http.ListenAndServe(":"+port, r)
 }
